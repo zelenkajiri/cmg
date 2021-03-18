@@ -1,0 +1,24 @@
+{
+  "name": "cmg",
+  "version": "1.0.0",
+  "description": "homework for cmd",
+  "scripts": {
+    "start": "npx tsc && node build/index.js",
+    "test": "jest"
+  },
+  "author": "JiriZelenka",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/jest": "^26.0.21",
+    "@types/mathjs": "^6.0.11",
+    "@types/node": "^14.14.35",
+    "eslint": "^7.22.0",
+    "jest": "^26.6.3",
+    "ts-jest": "^26.5.4",
+    "tslint": "^5.12.1",
+    "typescript": "^3.9.9"
+  },
+  "dependencies": {
+    "mathjs": "^9.3.0"
+  }
+}
