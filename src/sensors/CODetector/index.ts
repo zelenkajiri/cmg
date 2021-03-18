@@ -4,7 +4,9 @@ import { SensorEvaluation } from "../../types/sensorEvaluation";
 import BaseSensor from "../baseSensor";
 
 const keep = 3;
-
+/**
+ * Sensor for carbon monoxide.
+ */
 export default class CODetector extends BaseSensor {
     shouldBeKept(reference: number) {
         return this.values.every(item => abs(item.value - reference) <= keep)

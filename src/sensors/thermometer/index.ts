@@ -9,6 +9,9 @@ const ultraPreciseDev = 3;
 const veryPreciseMean = 0.5;
 const veryPreciseDev = 5;
 
+/**
+ * Sensor for temperature.
+ */
 export default class Thermometer extends BaseSensor {
     get standardDeviation() {
         return std(this.values.map(item => item.value));

@@ -21,7 +21,7 @@ export const parseData = (logContentsStr: string) => {
         const lineSplit = line.split(" ");
         let date = new Date(lineSplit[0]);
         
-        if (!isNaN(date.getTime()))
+        if (!isNaN(date.getTime())) // we check firstly the most common record
         {
             if (!sensor) throw new Error("Parsing error: sensor");
             sensor.addValue(new Date(lineSplit[0]), parseFloat(lineSplit[1]));
@@ -32,7 +32,7 @@ export const parseData = (logContentsStr: string) => {
         }
         else if (lineSplit[0] === TYPE_THERMOMETER)
         {
-            addPreviousSensor(output, sensor, reference);
+            addPreviousSensor(output, sensor, reference); // before creation of new sensor, we try to save the one we worked previously
             sensor = new Thermometer(lineSplit[1]);
         }
         else if (lineSplit[0] === TYPE_HYGROMETER)
@@ -47,7 +47,7 @@ export const parseData = (logContentsStr: string) => {
         }
     });
 
-    addPreviousSensor(output, sensor, reference);
+    addPreviousSensor(output, sensor, reference); // after parsing file we save the last sensor on log file
 
     return output;
 }

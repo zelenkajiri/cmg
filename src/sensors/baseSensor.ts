@@ -2,6 +2,10 @@ import { SensorValue } from "../types/sensorValue";
 import { Reference } from "../types/reference";
 import { SensorEvaluation } from "../types/sensorEvaluation";
 
+/**
+ * Base class that should inherit every sensor.
+ * When adding new sensor, we need to add new reference value Reference type and extend parser.
+ */
 export default abstract class BaseSensor {
     name: string;
     values: SensorValue[];

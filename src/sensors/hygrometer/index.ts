@@ -5,6 +5,9 @@ import BaseSensor from "../baseSensor";
 
 const keep = 1;
 
+/**
+ * Sensor for water vapors.
+ */
 export default class Hygrometer extends BaseSensor {
     shouldBeKept(reference: number) {
         return this.values.every(item => abs(item.value - reference) <= keep)
